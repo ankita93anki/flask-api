@@ -1,0 +1,15 @@
+python -m venv venv
+
+.\venv\Script\activate
+
+pip install flask
+
+flask run
+
+prevent pycache 
+
+$env:PYTHONDONTWRITEBYTECODE=1
+
+when we stop venv
+$env:FLASK_ENV="development"
+$env:PYTHONDONTWRITEBYTECODE=1
