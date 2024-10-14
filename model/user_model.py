@@ -17,4 +17,4 @@ class user_model():
         if len(result)>0:
             return json.dumps(result)
         else:
-            return "No Data Found"
+            return "No Data Found "
