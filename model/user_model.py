@@ -5,6 +5,7 @@ class user_model():
         #connection establishment code
         try:
             self.con = mysql.connector.connect(host="localhost",username="root", password="" , database="flask_tutorial")
+            self.con.autocommit = True
             self.cur=self.con.cursor(dictionary=True)
             print("connection successful")
         except:
@@ -18,3 +19,10 @@ class user_model():
             return json.dumps(result)
         else:
             return "No Data Found "
+        
+    def user_addone_model(self, data):
+        #query execution code
+        self.cur.execute(f"INSERT INTO users(name, email,phone,role,password) VALUES('{data['name']}', '{data['email']}','{data['phone']}','{data['role']}', '{data['password']}')")
+        
+        return "User Created Successfully"
+    
